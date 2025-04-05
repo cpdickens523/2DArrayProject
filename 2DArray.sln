@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2DArray", "2DArray\2DArray.csproj", "{EEF2C4A9-1919-4271-A576-A058179CDF5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEF2C4A9-1919-4271-A576-A058179CDF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF2C4A9-1919-4271-A576-A058179CDF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF2C4A9-1919-4271-A576-A058179CDF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF2C4A9-1919-4271-A576-A058179CDF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
