@@ -1,14 +1,24 @@
-﻿
-// See https;//aka.ms/new-console-template for more information
-
-using System;
+﻿using System;
 
 namespace MyApp
 {
-    using System;
-
     internal class Program
     {
+        static void DrawBorderedBox(char fillChar, char borderChar, int width = 8, int height = 8)
+        {
+            Console.WriteLine(new string(borderChar, width + 2)); 
+            for (int i = 0; i < height; i++)
+            {
+                Console.Write(borderChar); 
+                for (int j = 0; j < width; j++)
+                {
+                    Console.Write(fillChar);
+                }
+                Console.WriteLine(borderChar); 
+            }
+            Console.WriteLine(new string(borderChar, width + 2));
+        }
+
         static void Main(string[] args)
         {
             Random rng = new Random();
@@ -19,23 +29,19 @@ namespace MyApp
             const int SYMBOL_VARIABLE = 1;
             const int NUMBER_VARIABLE = 2;
             const int OTHER_VARIABLE = 3;
-            bool assign = false;
+
             int randomRows = rng.Next(LOW_NUMBER, HIGH_NUMBER);
             int randomColumns = rng.Next(LOW_NUMBER, HIGH_NUMBER);
-
 
             Console.WriteLine($"Enter {SYMBOL_VARIABLE} for X and O");
             Console.WriteLine($"Please enter {NUMBER_VARIABLE} for numbers");
             Console.WriteLine($"Enter {OTHER_VARIABLE} for OTHER");
             int userChoice = int.Parse(Console.ReadLine());
 
-
-
             Console.WriteLine($"A random row will generate: {randomRows}");
             Console.WriteLine($"A random column will generate: {randomColumns}");
 
             int[,] numbers = new int[randomRows, randomColumns];
-
 
             for (int i = 0; i < randomRows; i++)
             {
@@ -49,7 +55,6 @@ namespace MyApp
 
             if (userChoice == SYMBOL_VARIABLE)
             {
-
                 for (int i = 0; i < randomRows; i++)
                 {
                     for (int j = 0; j < randomColumns; j++)
@@ -63,11 +68,9 @@ namespace MyApp
                             Console.Write(arrayFigure1.PadLeft(4));
                         }
                     }
-
                     Console.WriteLine();
                 }
             }
-
             else if (userChoice == NUMBER_VARIABLE)
             {
                 for (int i = 0; i < randomRows; i++)
@@ -76,11 +79,11 @@ namespace MyApp
                     {
                         Console.Write(numbers[i, j].ToString().PadLeft(4));
                     }
-
                     Console.WriteLine();
                 }
             }
             else if (userChoice == OTHER_VARIABLE)
+            {
                 for (int i = 0; i < randomRows; i++)
                 {
                     for (int j = 0; j < randomColumns; j++)
@@ -94,14 +97,18 @@ namespace MyApp
                             Console.Write(arrayFigure1.PadLeft(4));
                         }
                     }
+                    DrawBorderedBox('X', '0');
                 }
-            else
-
-            {
-                        Console.WriteLine("Invalid input. Please restart and enter 1 or 2.");
             }
-
+            else
+            {
+                Console.WriteLine("Invalid input. Please restart and enter 1 or 2.");
+            }
         }
-    } 
+    }
 }
+
+
+
+
 
