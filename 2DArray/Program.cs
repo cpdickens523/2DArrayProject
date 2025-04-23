@@ -6,16 +6,18 @@ namespace MyApp
     {
         static void DrawBorderedBox(char fillChar, char borderChar, int width = 8, int height = 8)
         {
-            Console.WriteLine(new string(borderChar, width + 2)); 
+            Console.WriteLine(new string(borderChar, width + 2));
             for (int i = 0; i < height; i++)
             {
-                Console.Write(borderChar); 
+                Console.Write(borderChar);
                 for (int j = 0; j < width; j++)
                 {
                     Console.Write(fillChar);
                 }
-                Console.WriteLine(borderChar); 
+
+                Console.WriteLine(borderChar);
             }
+
             Console.WriteLine(new string(borderChar, width + 2));
         }
 
@@ -53,8 +55,12 @@ namespace MyApp
 
             Console.WriteLine("Here is your 2D array:");
 
+            string horizontalBorder = new string('#', (randomColumns * 4) + 2);
+
             if (userChoice == SYMBOL_VARIABLE)
             {
+                Console.WriteLine(horizontalBorder);
+
                 for (int i = 0; i < randomRows; i++)
                 {
                     for (int j = 0; j < randomColumns; j++)
@@ -68,27 +74,39 @@ namespace MyApp
                             Console.Write(arrayFigure1.PadLeft(4));
                         }
                     }
-                    Console.WriteLine();
+
+                    Console.WriteLine("#");
                 }
+
+                Console.WriteLine(horizontalBorder);
             }
             else if (userChoice == NUMBER_VARIABLE)
             {
+                Console.WriteLine(horizontalBorder);
+
                 for (int i = 0; i < randomRows; i++)
                 {
+                    Console.Write("#");
                     for (int j = 0; j < randomColumns; j++)
                     {
                         Console.Write(numbers[i, j].ToString().PadLeft(4));
                     }
-                    Console.WriteLine();
+                    Console.WriteLine("#");
                 }
+
+                Console.WriteLine(horizontalBorder);
             }
+            
             else if (userChoice == OTHER_VARIABLE)
             {
+                Console.WriteLine(horizontalBorder);
+
                 for (int i = 0; i < randomRows; i++)
                 {
+                    Console.Write("#");
                     for (int j = 0; j < randomColumns; j++)
                     {
-                        if (numbers[i, j] % 2 == 3)
+                        if (numbers[i, j] % 2 == 1)
                         {
                             Console.Write(arrayFigure2.PadLeft(4));
                         }
@@ -97,8 +115,11 @@ namespace MyApp
                             Console.Write(arrayFigure1.PadLeft(4));
                         }
                     }
-                    DrawBorderedBox('X', '0');
+
+                    Console.WriteLine("#");
                 }
+
+                Console.WriteLine(horizontalBorder);
             }
             else
             {
@@ -107,6 +128,7 @@ namespace MyApp
         }
     }
 }
+
 
 
 
