@@ -9,10 +9,10 @@ namespace MyApp
             Console.WriteLine(new string(borderChar, width + 2));
             for (int i = 0; i < height; i++)
             {
-                Console.Write(borderChar);
+                Console.WriteLine(borderChar);
                 for (int j = 0; j < width; j++)
                 {
-                    Console.Write(fillChar);
+                    Console.WriteLine(fillChar);
                 }
 
                 Console.WriteLine(borderChar);
@@ -52,11 +52,14 @@ namespace MyApp
                     numbers[i, j] = rng.Next(LOW_NUMBER, HIGH_NUMBER);
                 }
             }
-
             Console.WriteLine("Here is your 2D array:");
+         
+
 
             string horizontalBorder = new string('#', (threeColumns * 4) + 2);
             string verticalBorder = new string('#', (threeRows * 4) + 2);
+            
+        
 
             if (userChoice == SYMBOL_VARIABLE)
             {
@@ -64,6 +67,8 @@ namespace MyApp
 
                 for (int i = 0; i < threeRows; i++)
                 {
+                    Console.Write("#");
+                    
                     for (int j = 0; j < threeColumns; j++)
                     {
                         if (numbers[i, j] % 2 == 0)
@@ -84,6 +89,7 @@ namespace MyApp
             else if (userChoice == NUMBER_VARIABLE)
             {
                 Console.WriteLine(horizontalBorder);
+                Console.Write("#");
 
                 for (int i = 0; i < threeRows; i++)
                 {
@@ -101,6 +107,8 @@ namespace MyApp
             else if (userChoice == OTHER_VARIABLE)
             {
                 Console.WriteLine(horizontalBorder);
+                
+                Console.Write("#");
 
                 for (int i = 0; i < threeRows; i++)
                 {
