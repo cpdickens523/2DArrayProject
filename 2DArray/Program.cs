@@ -24,30 +24,30 @@ namespace MyApp
         static void Main(string[] args)
         {
             Random rng = new Random();
-            const int LOW_NUMBER = 0;
-            const int HIGH_NUMBER = 100;
+            const int LOW_NUMBER = 1;
+            const int HIGH_NUMBER = 3;
             const string arrayFigure1 = "X";
             const string arrayFigure2 = "O";
             const int SYMBOL_VARIABLE = 1;
             const int NUMBER_VARIABLE = 2;
             const int OTHER_VARIABLE = 3;
 
-            int randomRows = rng.Next(LOW_NUMBER, HIGH_NUMBER);
-            int randomColumns = rng.Next(LOW_NUMBER, HIGH_NUMBER);
+            int threeRows = LOW_NUMBER * HIGH_NUMBER;
+            int threeColumns = LOW_NUMBER * HIGH_NUMBER;
 
             Console.WriteLine($"Enter {SYMBOL_VARIABLE} for X and O");
             Console.WriteLine($"Please enter {NUMBER_VARIABLE} for numbers");
             Console.WriteLine($"Enter {OTHER_VARIABLE} for OTHER");
             int userChoice = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"A random row will generate: {randomRows}");
-            Console.WriteLine($"A random column will generate: {randomColumns}");
+            Console.WriteLine($"A random row will generate: {threeRows}");
+            Console.WriteLine($"A random column will generate: {threeColumns}");
 
-            int[,] numbers = new int[randomRows, randomColumns];
+            int[,] numbers = new int[threeRows, threeColumns];
 
-            for (int i = 0; i < randomRows; i++)
+            for (int i = 0; i < threeRows; i++)
             {
-                for (int j = 0; j < randomColumns; j++)
+                for (int j = 0; j < threeColumns; j++)
                 {
                     numbers[i, j] = rng.Next(LOW_NUMBER, HIGH_NUMBER);
                 }
@@ -55,15 +55,16 @@ namespace MyApp
 
             Console.WriteLine("Here is your 2D array:");
 
-            string horizontalBorder = new string('#', (randomColumns * 4) + 2);
+            string horizontalBorder = new string('#', (threeColumns * 4) + 2);
+            string verticalBorder = new string('#', (threeRows * 4) + 2);
 
             if (userChoice == SYMBOL_VARIABLE)
             {
-                Console.WriteLine(horizontalBorder);
+                Console.WriteLine(verticalBorder);
 
-                for (int i = 0; i < randomRows; i++)
+                for (int i = 0; i < threeRows; i++)
                 {
-                    for (int j = 0; j < randomColumns; j++)
+                    for (int j = 0; j < threeColumns; j++)
                     {
                         if (numbers[i, j] % 2 == 0)
                         {
@@ -84,10 +85,10 @@ namespace MyApp
             {
                 Console.WriteLine(horizontalBorder);
 
-                for (int i = 0; i < randomRows; i++)
+                for (int i = 0; i < threeRows; i++)
                 {
                     Console.Write("#");
-                    for (int j = 0; j < randomColumns; j++)
+                    for (int j = 0; j < threeColumns; j++)
                     {
                         Console.Write(numbers[i, j].ToString().PadLeft(4));
                     }
@@ -101,10 +102,10 @@ namespace MyApp
             {
                 Console.WriteLine(horizontalBorder);
 
-                for (int i = 0; i < randomRows; i++)
+                for (int i = 0; i < threeRows; i++)
                 {
                     Console.Write("#");
-                    for (int j = 0; j < randomColumns; j++)
+                    for (int j = 0; j < threeColumns; j++)
                     {
                         if (numbers[i, j] % 2 == 1)
                         {
