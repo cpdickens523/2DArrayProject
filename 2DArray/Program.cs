@@ -4,30 +4,13 @@ namespace MyApp
 {
     internal class Program
     {
-        static void DrawBorderedBox(char fillChar, char borderChar, int width = 8, int height = 8)
-        {
-            Console.WriteLine(new string(borderChar, width + 2));
-            for (int i = 0; i < height; i++)
-            {
-                Console.WriteLine(borderChar);
-                for (int j = 0; j < width; j++)
-                {
-                    Console.WriteLine(fillChar);
-                }
-
-                Console.WriteLine(borderChar);
-            }
-
-            Console.WriteLine(new string(borderChar, width + 2));
-        }
-
         static void Main(string[] args)
         {
             Random rng = new Random();
             const int LOW_NUMBER = 1;
             const int HIGH_NUMBER = 3;
-            const string arrayFigure1 = "X";
-            const string arrayFigure2 = "O";
+            const string ARRAY_FIGURE_1 = "X";
+            const string ARRAY_FIGURE_2 = "O";
             const int SYMBOL_VARIABLE = 1;
             const int NUMBER_VARIABLE = 2;
             const int OTHER_VARIABLE = 3;
@@ -73,11 +56,11 @@ namespace MyApp
                     {
                         if (numbers[i, j] % 2 == 0)
                         {
-                            Console.Write(arrayFigure2.PadLeft(4));
+                            Console.Write(ARRAY_FIGURE_2.PadLeft(4));
                         }
                         else
                         {
-                            Console.Write(arrayFigure1.PadLeft(4));
+                            Console.Write(ARRAY_FIGURE_1.PadLeft(4));
                         }
                     }
 
@@ -117,11 +100,11 @@ namespace MyApp
                     {
                         if (numbers[i, j] % 2 == 1)
                         {
-                            Console.Write(arrayFigure2.PadLeft(4));
+                            Console.Write(ARRAY_FIGURE_2.PadLeft(4));
                         }
                         else
                         {
-                            Console.Write(arrayFigure1.PadLeft(4));
+                            Console.Write(ARRAY_FIGURE_1.PadLeft(4));
                         }
                     }
 
