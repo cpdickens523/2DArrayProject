@@ -2,12 +2,35 @@
 
 using System;
 
+
+
 namespace MyApp
 {
+    public class UIMethod
+    {
+        public static void DisplayWelcomeMessage()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool MakeDecision()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    
+    UIMethod.DisplayWelcomeMessage();
     internal class Program
+    
+    if UIMethod.MakeDecision()== false)
+    { 
+        Environment.Exit(0);
+    }
+    
     {
         static void Main(string[] args)
         {
+            
             Random rng = new Random();
             const int LOW_NUMBER = 1;
             const int HIGH_NUMBER = 3;
